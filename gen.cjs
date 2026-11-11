@@ -13,7 +13,7 @@ const NEWSLETTER_LIVE = process.env.NEWSLETTER_LIVE === '1' || fs.existsSync(pat
 
 const { PILLARS, AUTHORS, NETWORK, SOCIAL } = require('./content/meta.cjs');
 const SRC = require('./content/sources.cjs');
-const { NET } = require('./content/netzwerk.cjs');
+const { NET, FALLBACK } = require('./content/netzwerk.cjs');
 let ALL = [];
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => /^articles.*\.cjs$/.test(f)).sort()) ALL = ALL.concat(require('./content/' + f));
 const ARTICLES = ALL.filter(a => !a.publishedAt || a.publishedAt <= TODAY).sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || '') || a.slug.localeCompare(b.slug));
@@ -103,7 +103,11 @@ const crumbHtml = items => `<nav class="crumbs" aria-label="Brotkrumen">${items.
 const cardHtml = a => `<article class="card" data-p="${a.pillar}"><p class="kicker"><a href="/thema/${a.pillar}/">${pil(a.pillar).name}</a></p><h3><a href="/artikel/${a.slug}/">${esc(a.title)}</a></h3><p>${esc(a.description)}</p><p class="meta">${AUTHORS[a.author].name} · ${wc(a)} Min. Lesezeit · ${dfmt(a.publishedAt)}</p></article>`;
 const orgLd = { '@type': 'Organization', '@id': SITE + '/#org', name: 'BA Entertainment', url: SITE + '/', address: { '@type': 'PostalAddress', streetAddress: 'Alleestraße 15', postalCode: '42781', addressLocality: 'Haan', addressCountry: 'DE' }, email: 'info@cogether.de' };
 const netBlock = a => {
-  const l = (NET[a.slug] || []).filter(x => !x.from || TODAY >= x.from).slice(0, 4);
+  const ok = x => !x.from || TODAY >= x.from;
+  let l = (NET[a.slug] || FALLBACK[a.pillar] || []).filter(ok);
+  // Prämisse: mindestens ein Link auf cogether.de/wissen pro Artikel
+  if (!l.some(x => x.u.startsWith('https://cogether.de/wissen/'))) l = [(FALLBACK[a.pillar] || []).find(x => x.u.startsWith('https://cogether.de/wissen/')), ...l].filter(Boolean);
+  l = l.slice(0, 4);
   if (!l.length) return '';
   return `<section class="netz"><h2>Im Netzwerk weiterlesen</h2><p>Passende Beiträge von unseren anderen Seiten:</p><ul>${l.map(x => `<li><a href="${x.u}" rel="noopener">${esc(x.t)}</a><small>${esc(x.p)}</small></li>`).join('')}</ul></section>`;
 };

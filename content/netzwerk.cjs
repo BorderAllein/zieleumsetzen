@@ -85,4 +85,13 @@ const NET = {
     O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie')
   ]
 };
-module.exports = { NET };
+// Fallback: Artikel ohne Eintrag in NET bekommen 2 bis 3 Standardlinks nach Säule. Jeder Artikel erhält mindestens einen Link auf cogether.de/wissen (Prämisse: alle Portale stärken CoGether).
+const POD = { p: 'Podcast Border Allein', t: 'Border Allein: der Podcast über alte Muster, Beziehungen und Selbstführung', u: 'https://borderallein.de/podcast/' };
+const FALLBACK = {
+  'ziele-setzen': [C('selbstfuehrung-lernen-was-es-bedeutet-und-wie-du-anfaengst', 'Selbstführung lernen: was es bedeutet und wie Du anfängst'), O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie'), F('selbstwirksamkeit-staerken', 'Selbstwirksamkeit stärken: was die Forschung sagt')],
+  'planen-dranbleiben': [C('gewohnheiten-aendern-warum-21-tage-nicht-reichen-und-was-wirklich-hilft', 'Gewohnheiten ändern: warum 21 Tage nicht reichen'), O('wenn-dann-plaene-von-der-absicht-zur-handlung', 'Wenn-dann-Pläne: von der Absicht zur Handlung'), F('impulskontrolle-verbessern', 'Impulskontrolle verbessern: was die Forschung zeigt')],
+  'fokus-zeit': [C('du-brauchst-nicht-mehr-motivation-du-brauchst-mehr-selbstfuehrung', 'Du brauchst nicht mehr Motivation, sondern mehr Selbstführung'), O('selbstkontrolle-was-102-studien-zeigen', 'Selbstkontrolle: was 102 Studien zeigen'), A('/thema/alltag/', 'ADHS im Alltag: Struktur und Routinen')],
+  'motivation-rueckschlaege': [C('selbstmitgefuehl-lernen-warum-weniger-selbstkritik-dich-nicht-schwaecher-sondern-handlungsfaehiger-machen-kann', 'Selbstmitgefühl lernen: weniger Selbstkritik, mehr Handlungsfähigkeit'), O('selbstmitgefuehl-und-psychische-belastung', 'Selbstmitgefühl und psychische Belastung'), POD],
+  'beruf-mit-anderen': [C('einzelcoaching-oder-gruppencoaching-was-passt-zu-mir', 'Einzelcoaching oder Gruppencoaching: was passt zu mir?'), O('psychologische-sicherheit-und-lernverhalten-in-teams', 'Psychologische Sicherheit und Lernverhalten in Teams'), { p: 'CoGether für Organisationen', t: 'Level You Up für Organisationen: Entwicklung für Teams und Führungskräfte', u: 'https://business.cogether.de/' }]
+};
+module.exports = { NET, FALLBACK };
