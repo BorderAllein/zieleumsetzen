@@ -1,0 +1,69 @@
+// Netzwerk-Verlinkung: pro Artikel 1 bis 4 thematisch passende Links auf andere Portale (Regeln: strategie/NETZWERK-VERLINKUNG.md).
+// Nur Seiten, die es gibt (HTTP 200, per check-links.cjs geprüft), beschreibende Linktexte.
+const O = (s, t) => ({ p: 'Guidance Observatory', t, u: 'https://guidanceobservatory.com/analyses/' + s + '/' });
+const C = (s, t) => ({ p: 'CoGether Wissen', t, u: 'https://cogether.de/wissen/' + s + '/' });
+// from: Link erscheint erst ab diesem Datum (Artikel dort ist bis dahin noch nicht veröffentlicht).
+const F = (s, t, from) => ({ p: 'Selbstfokus', t, u: 'https://selbstfokus.de/artikel/' + s + '/', from });
+const A = (path, t) => ({ p: 'ADHS Begleitung', t, u: 'https://adhsbegleitung.de' + path });
+const NET = {
+  'ziele-formulieren-spezifisch-anspruchsvoll': [
+    O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie'),
+    F('selbstwirksamkeit-staerken', 'Selbstwirksamkeit stärken: was die Forschung sagt'),
+    C('selbstfuehrung-lernen-was-es-bedeutet-und-wie-du-anfaengst', 'Selbstführung lernen: was es bedeutet und wie Du anfängst')
+  ],
+  'zu-viele-ziele-weniger-ist-mehr': [
+    F('entscheidungen-treffen-zu-viel-auswahl', 'Entscheidungen treffen bei zu viel Auswahl'),
+    O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie'),
+    C('selbstfuehrung-lernen-was-es-bedeutet-und-wie-du-anfaengst', 'Selbstführung lernen: was es bedeutet und wie Du anfängst')
+  ],
+  'passende-ziele-finden-selbstkonkordanz': [
+    O('selbstkonkordante-ziele-warum-passende-ziele-wohlbefinden-staerken', 'Selbstkonkordante Ziele: warum passende Ziele das Wohlbefinden stärken'),
+    F('selbstbestimmung-autonomie-kompetenz-verbundenheit', 'Selbstbestimmung: Autonomie, Kompetenz, Verbundenheit', '2026-11-21'),
+    C('orientierungslos-sinnkrise-lebenskrise-was-dahintersteckt-und-wie-du-wieder-richtung-findest', 'Orientierungslos: Sinnkrise und wie Du wieder Richtung findest')
+  ],
+  'wenn-dann-plan-schreiben-anleitung': [
+    O('wenn-dann-plaene-von-der-absicht-zur-handlung', 'Wenn-dann-Pläne: von der Absicht zur Handlung'),
+    F('impulskontrolle-verbessern', 'Impulskontrolle verbessern: was die Forschung zeigt'),
+    C('gewohnheiten-aendern-warum-21-tage-nicht-reichen-und-was-wirklich-hilft', 'Gewohnheiten ändern: warum 21 Tage nicht reichen')
+  ],
+  'routinen-entwerfen-anker-mindestversion': [
+    C('gewohnheiten-aendern-warum-21-tage-nicht-reichen-und-was-wirklich-hilft', 'Gewohnheiten ändern: warum 21 Tage nicht reichen'),
+    O('gewohnheiten-brauchen-laenger-als-gedacht', 'Gewohnheiten brauchen länger als gedacht'),
+    A('/thema/alltag/', 'ADHS im Alltag: Struktur und Routinen')
+  ],
+  'planungsfehlschluss-zeit-realistisch-planen': [
+    O('zeitmanagement-was-eine-meta-analyse-zu-leistung-und-wohlbefinden-zeigt', 'Zeitmanagement: was eine Meta-Analyse zu Leistung und Wohlbefinden zeigt'),
+    C('adhs-im-alltag-organisieren-struktur-zeitblindheit-und-reizueberflutung', 'ADHS im Alltag organisieren: Struktur, Zeitblindheit, Reizüberflutung'),
+    A('/artikel/zeitblindheit-adhs/', 'Zeitblindheit bei ADHS verstehen')
+  ],
+  'aufschieben-anfangen-leichter-machen': [
+    F('prokrastination-warum-wir-aufschieben', 'Prokrastination: warum wir aufschieben', '2026-11-14'),
+    O('prokrastination-was-691-korrelationen-zeigen', 'Prokrastination: was 691 Korrelationen zeigen'),
+    C('adhs-im-alltag-organisieren-struktur-zeitblindheit-und-reizueberflutung', 'ADHS im Alltag organisieren: Struktur, Zeitblindheit, Reizüberflutung')
+  ],
+  'versuchungen-umgebung-statt-willenskraft': [
+    F('impulskontrolle-verbessern', 'Impulskontrolle verbessern: was die Forschung zeigt'),
+    O('selbstkontrolle-was-102-studien-zeigen', 'Selbstkontrolle: was 102 Studien zeigen')
+  ],
+  'verpasster-tag-neustart-rueckschlag': [
+    C('selbstmitgefuehl-lernen-warum-weniger-selbstkritik-dich-nicht-schwaecher-sondern-handlungsfaehiger-machen-kann', 'Selbstmitgefühl lernen: weniger Selbstkritik, mehr Handlungsfähigkeit'),
+    O('selbstmitgefuehl-und-psychische-belastung', 'Selbstmitgefühl und psychische Belastung'),
+    F('selbstakzeptanz-und-wohlbefinden', 'Selbstakzeptanz und Wohlbefinden', '2026-11-19')
+  ],
+  'durchhalten-grit-was-belegt-ist': [
+    F('wachstums-mindset-was-belegt-ist', 'Wachstums-Mindset: was belegt ist'),
+    O('growth-mindset-was-zwei-meta-analysen-zeigen', 'Growth Mindset: was zwei Meta-Analysen zeigen'),
+    C('du-brauchst-nicht-mehr-motivation-du-brauchst-mehr-selbstfuehrung', 'Du brauchst nicht mehr Motivation, sondern mehr Selbstführung')
+  ],
+  'verbindlichkeit-rechenschaft-fortschritt-teilen': [
+    O('fortschritt-beobachten-was-138-experimente-zur-zielverfolgung-zeigen', 'Fortschritt beobachten: was 138 Experimente zur Zielverfolgung zeigen'),
+    O('peer-und-gruppenformate-in-der-begleitung', 'Peer- und Gruppenformate in der Begleitung'),
+    C('einzelcoaching-oder-gruppencoaching-was-passt-zu-mir', 'Einzelcoaching oder Gruppencoaching: was passt zu mir?')
+  ],
+  'teamziele-setzen-gruppen-leistung': [
+    O('psychologische-sicherheit-und-lernverhalten-in-teams', 'Psychologische Sicherheit und Lernverhalten in Teams'),
+    { p: 'CoGether für Organisationen', t: 'Level You Up für Organisationen: Entwicklung für Teams und Führungskräfte', u: 'https://business.cogether.de/' },
+    O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie')
+  ]
+};
+module.exports = { NET };

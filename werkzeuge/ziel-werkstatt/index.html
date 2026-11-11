@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ziel-Werkstatt: Ziel-Check und Wenn-dann-Planer | Ziele umsetzen</title>
+<meta name="description" content="Kostenloses Werkzeug im Browser: Prüfe Dein Ziel mit sechs Fragen und formuliere Wenn-dann-Pläne. Alle Eingaben bleiben auf Deinem Gerät.">
+<link rel="canonical" href="https://zieleumsetzen.de/werkzeuge/ziel-werkstatt/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ziele umsetzen">
+<meta property="og:title" content="Ziel-Werkstatt: Ziel-Check und Wenn-dann-Planer | Ziele umsetzen">
+<meta property="og:description" content="Kostenloses Werkzeug im Browser: Prüfe Dein Ziel mit sechs Fragen und formuliere Wenn-dann-Pläne. Alle Eingaben bleiben auf Deinem Gerät.">
+<meta property="og:url" content="https://zieleumsetzen.de/werkzeuge/ziel-werkstatt/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://zieleumsetzen.de/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d2a62">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/public-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css?v=2026-11-11">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://zieleumsetzen.de/"},{"@type":"ListItem","position":2,"name":"Ziel-Werkstatt","item":"https://zieleumsetzen.de/werkzeuge/ziel-werkstatt/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Ziel-Werkstatt","applicationCategory":"LifestyleApplication","operatingSystem":"Browser","inLanguage":"de-DE","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://zieleumsetzen.de/werkzeuge/ziel-werkstatt/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top">
+ <div class="wrap top-in">
+  <a class="brand" href="/" aria-label="Ziele umsetzen, Startseite"><svg class="logo" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="6" fill="currentColor"/><path d="M8 21l5-5 4 3 7-9" fill="none" stroke="#1d2a62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--coral)"/></svg><span>Ziele umsetzen</span></a>
+  <nav class="nav" aria-label="Hauptnavigation" id="nav">
+   <a href="/thema/ziele-setzen/">Ziele</a><a href="/thema/planen-dranbleiben/">Planen</a><a href="/thema/fokus-zeit/">Fokus</a><a href="/thema/motivation-rueckschlaege/">Motivation</a><a href="/thema/beruf-mit-anderen/">Beruf</a>
+   <a href="/werkzeuge/ziel-werkstatt/" aria-current="page">Werkstatt</a>
+   <a href="/suche/" class="nav-search">Suche</a>
+  </nav>
+  <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen"><span></span><span></span></button>
+ </div>
+</header>
+<main id="main">
+<div class="wrap-narrow" style="max-width:820px"><nav class="crumbs" aria-label="Brotkrumen"><a href="/">Start</a> / <span>Ziel-Werkstatt</span></nav>
+<header class="page-head"><p class="kicker">Werkzeug im Browser</p><h1>Ziel-Werkstatt</h1><p class="lede">Zwei kleine Werkzeuge: ein Ziel-Check mit sechs Fragen und ein Planer für Wenn-dann-Pläne. Alles läuft in Deinem Browser. Nichts wird übertragen, nichts wird gespeichert, auch nicht lokal. Wenn Du die Seite schließt, ist es weg.</p></header>
+<p class="small">Hinweis: Das ist eine Denkhilfe auf Grundlage von Forschungsbefunden, kein wissenschaftlich geprüfter Test und keine Beratung.</p>
+<div class="wk" id="wk">
+<section aria-labelledby="zc-h">
+<h2 id="zc-h">1. Ziel-Check</h2>
+<p>Beschreib ein Ziel, an dem Du arbeitest oder arbeiten willst, und beantworte sechs Fragen. Der Check zeigt Dir, wo ein Ziel vermutlich noch hakt, und verweist auf passende Beiträge.</p>
+<label for="zc-ziel">Mein Ziel</label>
+<input type="text" id="zc-ziel" placeholder="Zum Beispiel: Ich möchte regelmäßig Sport machen" autocomplete="off">
+<div id="zc-qs"></div>
+<div class="row"><button class="btn" type="button" id="zc-go">Ziel prüfen</button><button class="btn2" type="button" id="zc-reset">Zurücksetzen</button></div>
+<div id="zc-res" aria-live="polite"></div>
+</section>
+<section aria-labelledby="wd-h">
+<h2 id="wd-h">2. Wenn-dann-Planer</h2>
+<p>Ein Wenn-dann-Plan legt vorab fest, in welcher Situation Du was tust. Wie das in der Forschung aussieht, steht in <a href="/artikel/wenn-dann-plan-schreiben-anleitung/">Wenn-dann-Plan schreiben: Anleitung</a>. Mach es konkret, klein und an eine feste Situation gebunden.</p>
+<label for="wd-w">Wenn … (Situation, Ort, Zeitpunkt)</label>
+<input type="text" id="wd-w" placeholder="Zum Beispiel: ich morgens den Kaffee eingeschenkt habe" autocomplete="off">
+<label for="wd-d">dann … (konkrete, kleine Handlung)</label>
+<input type="text" id="wd-d" placeholder="Zum Beispiel: schreibe ich zehn Minuten an meinem Bericht" autocomplete="off">
+<label for="wd-h2">Optional: Was könnte dazwischenkommen?</label>
+<input type="text" id="wd-h2" placeholder="Zum Beispiel: das Handy liegt auf dem Tisch" autocomplete="off">
+<label for="wd-h3">Optional: Und was tue ich dann stattdessen?</label>
+<input type="text" id="wd-h3" placeholder="Zum Beispiel: lege ich es in den Flur und fange trotzdem an" autocomplete="off">
+<div class="row"><button class="btn" type="button" id="wd-add">Plan hinzufügen</button><button class="btn2" type="button" id="wd-copy">Alle Pläne kopieren</button><button class="btn2" type="button" id="wd-print">Drucken</button><button class="btn2" type="button" id="wd-clear">Leeren</button></div>
+<div id="wd-list" aria-live="polite"></div>
+<p class="small" id="wd-note">Tipp: Wähle für den Anfang einen bis drei Pläne. Mehr dazu, warum viele Pläne gleichzeitig oft schaden: <a href="/artikel/zu-viele-ziele-weniger-ist-mehr/">Zu viele Ziele: weniger ist mehr</a>.</p>
+</section>
+</div>
+<noscript><p>Für die Werkzeuge wird JavaScript benötigt.</p></noscript>
+</div>
+
+</main>
+
+<footer class="foot">
+ <div class="wrap foot-grid">
+  <div class="foot-brand"><a class="brand" href="/"><svg class="logo" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="6" fill="currentColor"/><path d="M8 21l5-5 4 3 7-9" fill="none" stroke="#1d2a62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="var(--coral)"/></svg><span>Ziele umsetzen</span></a><p>Vom Vorhaben zum Tun.</p><p class="small">Redaktionell unabhängiges Lesemagazin über die Umsetzung von Zielen. Herausgeber: BA Entertainment.</p></div>
+  <div><h2>Themen</h2><ul><li><a href="/thema/ziele-setzen/">Ziele setzen und priorisieren</a></li><li><a href="/thema/planen-dranbleiben/">Planen und Dranbleiben</a></li><li><a href="/thema/fokus-zeit/">Fokus und Zeit</a></li><li><a href="/thema/motivation-rueckschlaege/">Motivation und Rückschläge</a></li><li><a href="/thema/beruf-mit-anderen/">Umsetzung im Beruf und mit anderen</a></li></ul></div>
+  <div><h2>Magazin</h2><ul><li><a href="/werkzeuge/ziel-werkstatt/">Ziel-Werkstatt (Werkzeug)</a></li><li><a href="/redaktion/">Redaktion und Quellen</a></li><li><a href="/autoren/">Autor:innen</a></li><li><a href="/suche/">Suche</a></li><li><a href="/kontakt/">Kontakt</a></li><li><a href="/netzwerk/">Netzwerk</a></li></ul><h2 class="mt">Rechtliches</h2><ul><li><a href="/impressum/">Impressum</a></li><li><a href="/datenschutz/">Datenschutz</a></li></ul></div>
+  <div><h2>Die CoGether-Welt</h2><ul><li><a href="https://cogether.de/" rel="noopener">CoGether</a></li><li><a href="https://cogether-software.de/" rel="noopener">CoGether Software</a></li><li><a href="https://business.cogether.de/" rel="noopener">CoGether für Organisationen</a></li><li><a href="https://adhsbegleitung.de/" rel="noopener">ADHS Begleitung</a></li><li><a href="https://xn--borderlinefralle-tzb.de/" rel="noopener">Borderline für alle</a></li><li><a href="https://selbstfokus.de/" rel="noopener">Selbstfokus</a></li><li><a href="https://guidanceobservatory.com/" rel="noopener">Guidance Observatory</a></li><li><a href="https://borderallein.de/podcast/" rel="noopener">Podcast Border Allein</a></li><li><a href="https://gedankenkotze.de/" rel="noopener">Podcast Gedankenkotze</a></li></ul></div>
+ </div>
+ <div class="wrap foot-note"><p class="soc-row">Folge uns: <a href="https://www.instagram.com/cogether_official" target="_blank" rel="noopener">Instagram</a><span aria-hidden="true"> · </span><a href="https://www.tiktok.com/@borderallein_official" target="_blank" rel="noopener">TikTok</a><span aria-hidden="true"> · </span><a href="https://www.youtube.com/@cogether" target="_blank" rel="noopener">YouTube</a><span aria-hidden="true"> · </span><a href="https://de.linkedin.com/in/cogether" target="_blank" rel="noopener">LinkedIn</a></p><p><strong>Wichtig:</strong> Die Inhalte dienen der Information und ersetzen keine ärztliche, psychotherapeutische oder rechtliche Beratung. Wenn Dich etwas stark belastet: Telefonseelsorge kostenlos unter <a href="tel:116123">116 123</a>, im Notfall Notruf <a href="tel:112">112</a>.</p><p class="small">© 2026 BA Entertainment · Ziele umsetzen · Stand: 11. November 2026</p></div>
+</footer>
+<script src="/assets/site.js?v=2026-11-11" defer></script>
+
+<script src="/assets/tool.js?v=2026-11-11" defer></script>
+</body>
+</html>
