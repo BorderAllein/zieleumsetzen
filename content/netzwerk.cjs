@@ -6,6 +6,25 @@ const C = (s, t) => ({ p: 'CoGether Wissen', t, u: 'https://cogether.de/wissen/'
 const F = (s, t, from) => ({ p: 'Selbstfokus', t, u: 'https://selbstfokus.de/artikel/' + s + '/', from });
 const A = (path, t) => ({ p: 'ADHS Begleitung', t, u: 'https://adhsbegleitung.de' + path });
 const NET = {
+  'teilziele-grosse-ziele-zerlegen': [
+    O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie'),
+    F('selbstwirksamkeit-staerken', 'Selbstwirksamkeit stärken: was die Forschung sagt'),
+    C('selbstfuehrung-lernen-was-es-bedeutet-und-wie-du-anfaengst', 'Selbstführung lernen: was es bedeutet und wie Du anfängst')
+  ],
+  'pausen-machen-ohne-den-faden-zu-verlieren': [
+    O('mikropausen-bei-der-arbeit-was-eine-meta-analyse-zu-erholung-zeigt', 'Mikropausen bei der Arbeit: was eine Meta-Analyse zu Erholung zeigt'),
+    O('erholung-von-der-arbeit-was-54-stichproben-zeigen', 'Erholung von der Arbeit: was 54 Stichproben zeigen'),
+    C('achtsamkeit-im-alltag-was-sie-wirklich-bedeutet-und-wie-sie-bei-stress-helfen-kann', 'Achtsamkeit im Alltag: was sie bedeutet und wie sie bei Stress helfen kann')
+  ],
+  'ziele-loslassen-und-neu-ausrichten': [
+    C('selbstmitgefuehl-lernen-warum-weniger-selbstkritik-dich-nicht-schwaecher-sondern-handlungsfaehiger-machen-kann', 'Selbstmitgefühl lernen: weniger Selbstkritik, mehr Handlungsfähigkeit'),
+    O('selbstmitgefuehl-und-psychische-belastung', 'Selbstmitgefühl und psychische Belastung'),
+    C('orientierungslos-sinnkrise-lebenskrise-was-dahintersteckt-und-wie-du-wieder-richtung-findest', 'Orientierungslos: Sinnkrise und wie Du wieder Richtung findest')
+  ],
+  'feedback-einholen-und-nutzen': [
+    O('feedback-wann-es-hilft-und-wann-es-schadet', 'Feedback: wann es hilft und wann es schadet'),
+    O('coaching-und-multisource-feedback-feldstudie-mit-1361-managern', 'Coaching und Multisource-Feedback: Feldstudie mit 1.361 Managern')
+  ],
   'ziele-formulieren-spezifisch-anspruchsvoll': [
     O('zielsetzung-35-jahre-forschung-zur-zieltheorie', 'Zielsetzung: 35 Jahre Forschung zur Zieltheorie'),
     F('selbstwirksamkeit-staerken', 'Selbstwirksamkeit stärken: was die Forschung sagt'),
